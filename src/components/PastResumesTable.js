@@ -13,7 +13,7 @@ const PastResumesTable = ({ onViewDetails, onDelete }) => {
 
   const fetchResumes = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/resumes');
+      const response = await axios.get('https://deepkarity-back-3.onrender.com/api/resumes');
       setResumes(response.data);
     } catch (err) {
       setError('Failed to fetch resumes');
@@ -30,7 +30,7 @@ const PastResumesTable = ({ onViewDetails, onDelete }) => {
 
     setDeletingId(id);
     try {
-      await axios.delete(`http://localhost:5000/api/resumes/${id}`);
+      await axios.delete(`https://deepkarity-back-3.onrender.com/api/resumes/${id}`);
       
       // Remove the deleted resume from the local state
       setResumes(resumes.filter(resume => resume.id !== id));
